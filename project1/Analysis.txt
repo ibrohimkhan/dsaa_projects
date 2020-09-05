@@ -1,0 +1,41 @@
+Task0
+------
+There are two lines executing access to the lists items for printing values.
+The run time for this task is O(1) since to get item from the list is O(1).
+
+
+Task1
+------
+There are two loops iterating through items of the lists to add them into the set
+to avoid duplicated values. Iteration through all items of the list will take linear
+time and it has O(n) time complexity. To add item into the set in average case will
+take O(1), however in worst case it can become O(n). To get the length of the set
+will take constant time O(1). The run time of this task is O(n), but if the addition
+operation of the set takes O(n) time then this solution can become O(n^2) in worst case.
+
+
+Task2
+------
+There is a loop to get all calls for calculating its duration and populating a dictionary.
+The iteration through the list will take O(n) time, to add item into the dictionary in
+average case will take O(1) time but in worst case it may take O(n) time.
+To get a number with the most call duration there is a second loop which takes O(n) time
+and performing condition and assignment operations will take O(1) time. So, in average
+case the time complexity of this task is O(n) but in worst case it may take O(n^2).
+
+
+Task3
+------
+There are two loops are used in this task and each of them will take O(n) time. To get unique
+numbers the list is converted into a set, creation of the set depends on the length of the
+iterable and it is O(len(...)), the operation len(list) will take O(1) time, so to convert a
+list to a set will take constant time O(1). In this task the sorting operation is used which
+takes O(nlogn) time. So, the time complexity of this task is O(nlogn).
+
+Task4
+-------
+There are for operations are used to create sets, each of them will take constant time O(1).
+The first loop iterates through a set which takes O(n) times and a conditional operation
+which takes O(1), to add item into a list append() method is used which takes constant time,
+O(1). The second loop is used for printing the list content and it takes O(n) times. To sort
+data in the list sort() method is used which takes O(nlogn) time. So, this task takes O(nlogn) time.
