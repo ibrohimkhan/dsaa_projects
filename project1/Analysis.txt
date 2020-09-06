@@ -37,6 +37,8 @@ Task4
 -------
 There are for operations are used to create sets, each of them will take constant time O(1).
 The first loop iterates through a set which takes O(n) times and a conditional operation
-which takes O(1), to add item into a list append() method is used which takes constant time,
-O(1). The second loop is used for printing the list content and it takes O(n) times. To sort
-data in the list sort() method is used which takes O(nlogn) time. So, this task takes O(nlogn) time.
+which takes O(1) in average case and in worst case the 'in' operation may take O(n) time, to
+add item into a list append() method is used which takes constant time, O(1). The second loop
+is used for printing the list content and it takes O(n) times. To sort data in the list
+sort() method is used which takes O(nlogn) time. So, this task takes O(nlogn) time in average
+case and O(n^2) in worst case.
