@@ -95,7 +95,8 @@ class LRU_Cache:
             self.cache[key] = self.queue.enqueue(key, value)
 
 
-if __name__ == '__main__':
+def test_1():
+    print("test 1: Normal case")
     lru = LRU_Cache(5)
     lru.set(1, 1)
     lru.set(2, 2)
@@ -107,7 +108,7 @@ if __name__ == '__main__':
     print(lru.get(2))
     # returns 2
     print(lru.get(9))
-    # returns -1 there is no 9 in the cache
+    # returns -1 since there is no 9 in the cache
 
     lru.set(5, 5)
     lru.set(6, 6)
@@ -115,8 +116,33 @@ if __name__ == '__main__':
     print(lru.get(3))
     # returns -1 since the cache reached it's capacity and 3 was the least recently used entry
 
+
+def test_2():
+    print("test 2: Edge case with zero capacity")
     lru = LRU_Cache(0)
     lru.set(1, 1)
-    # the set operation is not supported in cache with zero or less capacity
+    # prints Operation is not supported with capacity of 0
     print(lru.get(1))
     # returns -1 since there is no such element
+
+
+def test_3():
+    print("test 3: Edge case with one capacity")
+    lru = LRU_Cache(1)
+    lru.set(3, 3)
+
+    print(lru.get(3))
+    # returns 3
+
+    lru.set(2, 2)
+    print(lru.get(3))
+    # returns -1 since the cache reached it's capacity and 3 was the least recently used (actually the only) entry
+
+    print(lru.get(2))
+    # returns 2
+
+
+if __name__ == '__main__':
+    test_1()
+    test_2()
+    test_3()
