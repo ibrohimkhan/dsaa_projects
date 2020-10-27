@@ -1,0 +1,11 @@
+The LRU Cache problem is implemented based on Python's built-in data structure 'Dictionary' and custom implemetation of
+'Queue' which is based on 'LinkedList' data structure. The given solution provides two methods:
+    'get' - returns value by the given key if exists othervise it returns -1
+and
+    'set' - inserts the given key/value pair into a dictionary or updates the value if the key is already exists
+
+Since we are operating with immutable data type, integer value, the hash function for this object is
+sufficiently robust to make collisions. Therefore the time complexity of these two operations are O(1). Internal
+operations of the Queue: enqueue, dequeue and remove operate on next and previous references of the Node object and each
+of this operation takes constant time O(1). The space complexity takes O(n), but we are storing values twice, in dict
+and queue.
