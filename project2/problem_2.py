@@ -8,7 +8,7 @@ def find_files(suffix, path):
     if not items:
         return None
 
-    files = [file for file in items if file.endswith(f".{suffix}")]
+    files = [file for file in items if os.path.isfile(path + '/' + file) and file.endswith(f".{suffix}")]
     folders = [folder for folder in items if os.path.isdir(path + '/' + folder)]
 
     for folder in folders:
