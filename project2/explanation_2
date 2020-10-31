@@ -1,0 +1,8 @@
+The Finding Files problem is implemented with recursion. From the given path we have to visit each folder, on each folder
+we keep the files that match the given suffix and we keep going deeper on the folder structure by launching subsequent
+calls to the function. The function call exits from the call stack if there are no files and folders on the current path.
+The function returns collected files and exits from the call stack if there is no folder.
+
+The time complexity depends on the number of iterations that are launched, in this case it depends on depth and width
+of the folders. So, the time complexity is O(d*w). The space complexity depends on number of returns the function does,
+it is the number of found files, O(f).
