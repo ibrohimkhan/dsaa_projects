@@ -92,6 +92,9 @@ def reverse(codes):
 
 
 def huffman_encoding(data):
+    if not data or not data.strip():
+        return None, None
+
     freq = get_frequency(data)
     heap = create_heap(freq)
     merge_nodes(heap)
@@ -119,18 +122,64 @@ def huffman_decoding(data, tree):
     return decoded_text
 
 
-if __name__ == '__main__':
+def test_1():
+    print("test 1: Normal case")
+
     a_great_sentence = "The bird is the word"
 
     print("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
+    # The size of the data is: 69
     print("The content of the data is: {}\n".format(a_great_sentence))
+    # The content of the data is: The bird is the word
 
     encoded_data, tree = huffman_encoding(a_great_sentence)
 
     print("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    # The size of the encoded data is: 36
     print("The content of the encoded data is: {}\n".format(encoded_data))
+    # The content of the encoded data is: 1000111111100100001101110000101110110110100011111111001101010011100001
 
     decoded_data = huffman_decoding(encoded_data, tree)
 
     print("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    # The size of the decoded data is: 69
     print("The content of the encoded data is: {}\n".format(decoded_data))
+    # The content of the encoded data is: The bird is the word
+
+
+def test_2():
+    print("test 2: Edge case with empty text")
+    a_great_sentence = ''
+
+    print("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
+    # The size of the data is: 49
+    print("The content of the data is: {}\n".format(a_great_sentence))
+    # The content of the data is:
+
+    encoded_data, tree = huffman_encoding(a_great_sentence)
+
+    if not encoded_data and not tree:
+        print("success: data not encoded")
+        # success: data not encoded
+
+
+def test_3():
+    print("test 2: Edge case with whitespace")
+    a_great_sentence = ' '
+
+    print("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
+    # The size of the data is: 50
+    print("The content of the data is: {}\n".format(a_great_sentence))
+    # The content of the data is:
+
+    encoded_data, tree = huffman_encoding(a_great_sentence)
+
+    if not encoded_data and not tree:
+        print("success: data not encoded")
+        # success: data not encoded
+
+
+if __name__ == '__main__':
+    test_1()
+    test_2()
+    test_3()
