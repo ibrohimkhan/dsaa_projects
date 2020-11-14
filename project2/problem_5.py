@@ -116,7 +116,7 @@ def test_2():
 
 
 def test_3():
-    print("test 2: Find Block")
+    print("test 3: Find Block")
 
     blockchain = BlockChain()
 
@@ -130,8 +130,19 @@ def test_3():
     # None
 
 
+def test_4():
+    print("test 4: Edge case with zero length of blockchain")
+
+    blockchain = BlockChain()
+    print(blockchain)
+    # empty chain
+    print(blockchain.size)
+    # 0
+
+
 if __name__ == '__main__':
     # NOTE: Your timestamp value will be different
     test_1()
     test_2()
     test_3()
+    test_4()

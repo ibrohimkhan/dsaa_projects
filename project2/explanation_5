@@ -1,5 +1,0 @@
-The Blockchain problem is implemented based on LinkedList data structure. Each block is added into the end of the chain.
-The add() operation takes O(1) constant time. There is a find() operation for searching a block in the chain. The find
-operation uses to_list() method, which takes O(n) time and space to create a list and it iterates over this list to find
-a block. In general this operation will take O(2n) which is O(n) time. The find operation would be efficient if we
-iterate over the linked list itself. For the space complexity it takes O(n).

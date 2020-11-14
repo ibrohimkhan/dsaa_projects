@@ -148,7 +148,20 @@ def test_3():
     #
 
 
+def test_4():
+    print('Test case 4')
+
+    linked_list_7 = LinkedList()
+    linked_list_8 = LinkedList()
+
+    print(union(linked_list_7, linked_list_8))
+    #
+    print(intersection(linked_list_7, linked_list_8))
+    #
+
+
 if __name__ == '__main__':
     test_1()
     test_2()
     test_3()
+    test_4()

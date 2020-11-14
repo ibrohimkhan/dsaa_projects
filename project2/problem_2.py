@@ -1,6 +1,15 @@
 import os
 
 def find_files(suffix, path):
+    if os.path.isfile(path):
+        if suffix is not None and len(suffix) > 0:
+            if not path.endswith(f".{suffix}"):
+                return None
+            else:
+                return os.path.basename(path)
+        else:
+            return os.path.basename(path)
+
     if not suffix:
         return None
 
@@ -41,7 +50,23 @@ def test_3():
     # returns []
 
 
+def test_4():
+    print("test 4: Edge case where path of directory is path of a file")
+    base_dir = os.getcwd() + '/testdir/t1.h'
+    b = os.path.isdir(base_dir)
+
+    print(find_files('h', base_dir))
+    # returns t1.h
+
+    print(find_files('', base_dir))
+    # returns t1.h
+
+    print(find_files('x', base_dir))
+    # returns None
+
+
 if __name__ == '__main__':
     test_1()
     test_2()
     test_3()
+    test_4()

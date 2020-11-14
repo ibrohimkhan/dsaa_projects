@@ -66,7 +66,7 @@ def merge_nodes(heap):
 def binaryze(heap):
     root = heapq.heappop(heap)
     codes = {}
-    byte_codes = ''
+    byte_codes = '0'
 
     def add_binary_code(root, byte_codes):
         if root is None:
@@ -137,7 +137,7 @@ def test_1():
     print("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
     # The size of the encoded data is: 36
     print("The content of the encoded data is: {}\n".format(encoded_data))
-    # The content of the encoded data is: 1000111111100100001101110000101110110110100011111111001101010011100001
+    # The content of the encoded data is: 010000111101110001000000110101100000100101101010110010000101111011100010101001001011000001
 
     decoded_data = huffman_decoding(encoded_data, tree)
 
@@ -164,7 +164,7 @@ def test_2():
 
 
 def test_3():
-    print("test 2: Edge case with whitespace")
+    print("test 3: Edge case with whitespace")
     a_great_sentence = ' '
 
     print("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
@@ -179,7 +179,33 @@ def test_3():
         # success: data not encoded
 
 
+def test_4():
+    print("test 4: Edge case with repeating character")
+
+    a_great_sentence = "aaaaaa"
+
+    print("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
+    # The size of the data is: 55
+    print("The content of the data is: {}\n".format(a_great_sentence))
+    # The content of the data is: aaaaaa
+
+    encoded_data, tree = huffman_encoding(a_great_sentence)
+
+    print("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
+    # The size of the encoded data is: 24
+    print("The content of the encoded data is: {}\n".format(encoded_data))
+    # The content of the encoded data is: 000000
+
+    decoded_data = huffman_decoding(encoded_data, tree)
+
+    print("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
+    # The size of the decoded data is: 55
+    print("The content of the encoded data is: {}\n".format(decoded_data))
+    # The content of the encoded data is: aaaaaa
+
+
 if __name__ == '__main__':
     test_1()
     test_2()
     test_3()
+    test_4()

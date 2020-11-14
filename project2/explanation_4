@@ -1,8 +1,0 @@
-The Active Directory problem is implemented with recursion. The function takes two parameters, user and group. For the
-given group we firstly check if the given user exists in group's user list, for this check we use 'in' operator, in
-average case it takes O(n) times. If the given user in a list we return true otherwise we iterate over the groups of the
-given group and for each sub_group we call our function (recursively) by passing the user and sub_group.
-
-The time complexity depends on the number of iterations that are launched, in best case if the user exist in the user
-list of the given group, it will take O(n). Otherwise it may take O(n*depth_of_the_group). The space complexity depends
-on number of returns the function does, in our case it's just True or False, so it's O(1).

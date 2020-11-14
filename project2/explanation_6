@@ -1,9 +1,0 @@
-The Union and Intersection problem is implemented based on custom solution and Python's built-in List data structure.
-Since, Python's Set is unordered type I have decided not to use it even though it simplifies problem's implementation.
-For this problem I've added to_list() method to convert linkedlist into a list, time complexity of this operation is O(n).
-The union operation takes O(n^2) time to produce a result. It iterates over combined list, which takes O(n) time and
-appends item into a linkedlist if it's not exist, the contains operation takes O(n) time. The space complexity is O(n).
-The intersection operation takes O(n^3) time, since it uses two nested loop and contains operation, which takes O(n)
-time. The space complexity is O(n).
-If the problem solution was based on Set data structure the union operation would take in average case O(len(s) + len(t))
-and the intersection operation would take O(len(s) * len(t)) time in worst case.
