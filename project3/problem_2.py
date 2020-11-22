@@ -7,9 +7,14 @@ def recursive_search(input_list, number, start, end):
         return middle
 
     left = recursive_search(input_list, number, start, middle - 1)
-    right = recursive_search(input_list, number, middle + 1, end)
+    if input_list[left] == number:
+        return left
 
-    return max(left, right)
+    right = recursive_search(input_list, number, middle + 1, end)
+    if input_list[right] == number:
+        return right
+
+    return -1
 
 
 def rotated_array_search(input_list: list, number: int):
