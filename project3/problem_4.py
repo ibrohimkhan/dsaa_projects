@@ -1,22 +1,23 @@
 def sort_012(input_list):
-    left_index = 0
-    right_index = len(input_list) - 1
-    current_index = 0
+    next_pos_0 = 0
+    next_pos_2 = len(input_list) - 1
 
-    while current_index <= right_index:
-        if input_list[current_index] == 0:
-            input_list[current_index] = input_list[left_index]
-            input_list[left_index] = 0
-            left_index += 1
-            current_index += 1
+    front_index = 0
 
-        elif input_list[current_index] == 2:
-            input_list[current_index] = input_list[right_index]
-            input_list[right_index] = 2
-            right_index -= 1
+    while front_index <= next_pos_2:
+        if input_list[front_index] == 0:
+            input_list[front_index] = input_list[next_pos_0]
+            input_list[next_pos_0] = 0
+            next_pos_0 += 1
+            front_index += 1
+
+        elif input_list[front_index] == 2:
+            input_list[front_index] = input_list[next_pos_2]
+            input_list[next_pos_2] = 2
+            next_pos_2 -= 1
 
         else:
-            current_index += 1
+            front_index += 1
 
     return input_list
 
