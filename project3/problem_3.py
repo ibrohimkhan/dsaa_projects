@@ -80,7 +80,7 @@ class Heap:
 
 def rearrange_digits(input_list):
     if not input_list:
-        return None
+        return []
 
     heap = Heap()
     for item in input_list:
@@ -108,9 +108,32 @@ def test_function(test_case):
 
 
 def test_1():
+    print("Test 1: Normal case")
     test_function([[1, 2, 3, 4, 5], [542, 31]])
+    # Pass
     test_function([[4, 6, 2, 5, 9, 8], [964, 852]])
+    # Pass
+
+
+def test_2():
+    print("Test 2: Other case")
+    test_function([[0, 1], [1, 0]])
+    # Pass
+    test_function([[1, 0], [1, 0]])
+    # Pass
+
+
+def test_3():
+    print("Test 3: Edge case")
+    test_function([[1, 1], [1, 1]])
+    # Pass
+    test_function([[], []])
+    # Pass
+    test_function([[], [0, 0]])
+    # Pass
 
 
 if __name__ == '__main__':
     test_1()
+    test_2()
+    test_3()
