@@ -6,9 +6,6 @@ class RouteTrieNode:
         self.handler = handler
         self.children = defaultdict(RouteTrieNode)
 
-    def insert(self, path):
-        self.children[path] = RouteTrieNode()
-
 
 class RouteTrie:
     def __init__(self, handler=None):
@@ -18,7 +15,6 @@ class RouteTrie:
         current_node = self.root
 
         for path in route:
-            current_node.insert(path)
             current_node = current_node.children[path]
 
         current_node.handler = handler
@@ -41,11 +37,11 @@ class Router:
         self.error_handler = error_handler
 
     def add_handler(self, route, handler):
-        path = self.split_path(route)
+        path = self._split_path(route)
         self.routeTrie.insert(path, handler)
 
     def lookup(self, route):
-        path = self.split_path(route)
+        path = self._split_path(route)
         handler = self.routeTrie.find(path)
 
         if handler is None:
@@ -53,7 +49,7 @@ class Router:
         else:
             return handler
 
-    def split_path(self, path):
+    def _split_path(self, path):
         path = path.strip("/")
         return path.split("/") if path else []
 
@@ -63,26 +59,26 @@ def test():
     router.add_handler("/home/about", "about handler")
 
     print(router.lookup("/"))
-    # should print 'root handler'
+    # root handler
 
     print(router.lookup("/home"))
-    # should print 'not found handler'
+    # not found handler
 
     print(router.lookup("/home/about"))
-    # should print 'about handler'
+    # about handler
 
     print(router.lookup("/home/about/"))
-    # should print 'about handler'
+    # about handler
 
     print(router.lookup("/home/about/me"))
-    # should print 'not found handler'
+    # not found handler
 
     # Edge cases
     print(router.lookup(""))
-    # Should print 'root handler'
+    # root handler
 
     print(router.lookup(" "))
-    # should print 'not found handler'
+    # not found handler
 
 
 if __name__ == '__main__':
