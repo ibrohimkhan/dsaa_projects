@@ -1,0 +1,41 @@
+PROBLEM 1:
+
+Finding Square Root of an Integer problem is implemented with binary search algorithm. To find a square root of the
+given number we iterate from start (zero) to end (the given number) and on each iteration we find a middle, get its
+power and compare with the given number. If the power of the middle value is equal to the given number we return the
+middle value, otherwise we move to the left (start to middle) or right (middle to end) half and continue iteration.
+In each iteration, half of the values is eliminated from the search. Its runtime complexity is O(logn) and space
+complexity is O(1).
+
+
+PROBLEM 2:
+
+Search in a Rotated Sorted Array problem is based on recursion and binary search algorithm is applied to its implementation.
+On each recursive call we find middle value of the given array and compare it with target number, if they are equal we
+return middle position of the value, otherwise we search the left half of the array and if found return the value's
+position or search the right half of the array, and if there is no value we return -1. Since we eliminate half of the
+values on each iteration the runtime complexity is O(logn). The space taken by the algorithm is the same for any number
+of elements in the array and its complexity is O(1).
+
+
+PROBLEM 3:
+
+
+
+
+PROBLEM 4:
+
+
+
+
+PROBLEM 5:
+
+
+
+
+PROBLEM 6:
+
+
+
+
+PROBLEM 7:
