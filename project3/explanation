@@ -70,3 +70,7 @@ The space complexity is constant and takes O(1) space.
 
 PROBLEM 7:
 
+The HTTPRouter using a Trie problem is similar to problem 5, except for the edge cases like "root handler" and working
+with a hierarchy of web pages instead of strings. The focus of this problem is implementing Trie data structure which is
+suited for a good ratio between time and space complexity.
+The finding and inserting operations take O(n) time. For space complexity it takes O(n).
