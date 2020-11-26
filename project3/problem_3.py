@@ -58,7 +58,7 @@ class Heap:
         return self.next_index
 
     def insert(self, data):
-        self.cbt.insert(self.next_index, data)
+        self.cbt.append(data)
         self._up_heapify()
         self.next_index += 1
 

@@ -20,7 +20,13 @@ of elements in the array and its complexity is O(1).
 
 PROBLEM 3:
 
-
+The Rearrange Array Elements problem is implemented with max heap data structure. Firstly we iterate over array and
+insert each element into a heap, insertion operation takes O(logn) time. Afterwards, traverse the heap and construct
+the 2 numbers. On each odd step we remove element from the heap and append returned value to first_number, on each even
+step we remove element from the heap and append its returned value to second_number. The remove operation in heap takes
+O(logn) time. When iteration is over we return these two numbers ([first_number, second_number]). The runtime complexity
+is O(nlogn). The space complexity is O(n), since each element of the given array was added into a heap, which takes O(n)
+space.
 
 
 PROBLEM 4:
